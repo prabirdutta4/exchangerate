@@ -1,0 +1,21 @@
+https://github.com/danielme85/laravel-cconverter
+https://danielmellum.com/projects/currency-converter
+
+https://github.com/florianv/laravel-swap
+
+https://medium.com/@bastones/currency-conversions-and-localised-pricing-in-laravel-projects-556cfc23bbd2
+
+
+
+ //To convert a value based on historical data
+$valueNOK = Currency::conv($from = 'USD', $to = 'NOK', $value = 10, $decimals = 2, $date = '2018-12-24');
+
+//to get an array of all the rates associated to a base currency.
+$rates = Currency::rates(); //defaults to USD
+
+$rates = Currency::rates('NOK');
+
+//Get historical rates
+$rates = Currency::rates('NOK', '2018-12-24');
+
+$formater = Currency::money($amount = 0, $currency = 'USD');
