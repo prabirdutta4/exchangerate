@@ -63,7 +63,7 @@ class ExchangeRateController extends Controller
 		$to_country = $request->to_country;
 		$amount = $request->amount;
 		$decimals = 2;
-		$decimals = 'money';
+		//$decimals = 'money';
 		$_data = Currency::conv($from_country, $to_country, $amount, $decimals);
 		if($_data==0){
 			$currencyrate = CurrencyRate::select('rate')->where('from_currency',$from_country)->where('to_currency',$to_country)->orderBy('id','desc')->first();
